@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="colorPrimary">#2BDFF3</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#027AFF</color>
+
+    <!-- Supporting colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="lightGray">#f3f3f2</color>
+    <color name="seashell">#fefefe</color>
+    <color name="blue">#2D64F6</color>
+    <color name="dark_blue">#0043EF</color>
+    <color name="grey">#4A5561</color>
+
+    <!-- Transparent -->
+    <color name="black_60">#99000000</color>
+    <color name="black_25">#40000000</color>
+
+    <!-- Background -->
+    <color name="background">@color/lightGray</color>
+    <color name="list_item_background">@color/seashell</color>
+    <color name="overlay_background">@color/black_25</color>
+
+    <!-- Primary button -->
+    <color name="primary_button_background_disabled_color">@color/grey</color>
+    <color name="primary_button_background_pressed_color">@color/dark_blue</color>
+    <color name="primary_button_background_color">@color/blue</color>
+    <color name="primary_button_text_color">@color/white</color>
+    <color name="primary_button_disable_text_color">@color/black_25</color>
+
+    <!-- Outlined button -->
+    <color name="outlined_button_stroke_color">@color/black_25</color>
+    <color name="outlined_button_stroke_pressed_color">@color/grey</color>
+    <color name="outlined_button_stroke_disabled_color">@color/black_25</color>
+    <color name="outlined_button_text_color">@color/black_25</color>
+    <color name="outlined_button_disable_text_color">@color/black_25</color>
+
+    <!-- Status bar -->
+    <color name="status_bar_color">@color/black</color>
+
+    <!-- Toolbar -->
+    <color name="toolbar_primary_text_color">@color/text_color</color>
+    <color name="toolbar_primary_background_color">@color/white</color>
+    <color name="toolbar_primary_icon_color">@color/black</color>
+
+    <!-- Spinner -->
+    <color name="loading_spinner_color">@color/black_60</color>
+
+    <!-- Text -->
+    <color name="text_color">@color/black</color>
+    <color name="title_text_color">@color/black</color>
+
 </resources>

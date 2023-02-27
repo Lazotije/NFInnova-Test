@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.repoapp"
-        minSdk 21
+        minSdk 23
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -30,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -47,9 +51,8 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${versions.appCompat}"
     implementation "com.google.android.material:material:${versions.material}"
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraint}"
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:${versions.swiperefreshlayout}"
 
-    //Navigation
+    // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
     implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
 
@@ -60,7 +63,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}"
 
-    //Retrofit
+    // Retrofit
     implementation "com.squareup.retrofit2:retrofit:${versions.retrofitVersion}"
     implementation "com.squareup.retrofit2:converter-moshi:${versions.retrofitVersion}"
     implementation "com.squareup.retrofit2:converter-gson:${versions.gson}"
@@ -68,9 +71,11 @@ dependencies {
 
     // Koin for Android
     implementation "io.insert-koin:koin-android:${versions.koin}"
-    implementation "io.insert-koin:koin-androidx-viewmodel:${versions.koin}"
-    implementation "io.insert-koin:koin-androidx-ext:${versions.koin}"
 
     // Timber
-    implementation "com.jakewharton.timber:timber:${versions.timbe}r"
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
+
+    // Fragment
+    implementation "androidx.appcompat:appcompat:${versions.app_compat}"
+    implementation "androidx.fragment:fragment:${versions.fragment}"
 }

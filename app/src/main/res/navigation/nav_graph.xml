@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_repos">
+
+    <fragment
+        android:id="@+id/navigation_repos"
+        android:name="com.example.repoapp.fragment.RepositoryFragment"
+        android:label="RepositoryFragment"
+        tools:layout="@layout/layout_fragment_repository">
+
+        <action
+            android:id="@+id/action_repo_details"
+            app:destination="@id/navigation_repo_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_repo_details"
+        android:name="com.example.repoapp.fragment.RepositoryDetailsFragment"
+        android:label="RepositoryDetailsFragment"
+        tools:layout="@layout/layout_fragment_repository_details">
+
+        <argument
+            android:name="repo"
+            app:argType="com.example.repoapp.model.UserRepo"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RepoApp</string>
+    <string name="repo_name">Repo name</string>
+    <string name="open_issues">Open issues</string>
 </resources>
