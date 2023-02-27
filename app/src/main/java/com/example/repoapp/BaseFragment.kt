@@ -26,19 +26,7 @@ abstract class BaseFragment(
         lifecycle.removeObserver(this)
     }
 
-    override fun onResume(owner: LifecycleOwner) {
-        if (activity is BaseFragmentInterface) {
-            with(activity as BaseFragmentInterface) {
-                setToolbarVisible(showToolbar)
-                setToolbarTitle(title)
-                setShowBack(showBack)
-            }
-        }
-    }
-
-    //todo check
-//    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-//    fun onCreated() {
+//    override fun onResume(owner: LifecycleOwner) {
 //        if (activity is BaseFragmentInterface) {
 //            with(activity as BaseFragmentInterface) {
 //                setToolbarVisible(showToolbar)
@@ -47,4 +35,16 @@ abstract class BaseFragment(
 //            }
 //        }
 //    }
+
+    //todo check
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    fun onCreated() {
+        if (activity is BaseFragmentInterface) {
+            with(activity as BaseFragmentInterface) {
+                setToolbarVisible(showToolbar)
+                setToolbarTitle(title)
+                setShowBack(showBack)
+            }
+        }
+    }
 }

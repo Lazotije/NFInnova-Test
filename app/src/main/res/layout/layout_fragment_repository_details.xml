@@ -1,6 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="avatar"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/iv_avatar"
+                app:layout_constraintStart_toStartOf="@id/iv_avatar"
+                app:layout_constraintTop_toBottomOf="@id/iv_avatar"
+                tools:text="name" />
+
+
+            <TextView
+                android:id="@+id/tv_repo_name"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@+id/tv_forks_label"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_username"
+                tools:text="@string/repo_name" />
+
+            <TextView
+                android:id="@+id/tv_forks_label"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:text="number of forks"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_repo_name"
+                app:layout_constraintEnd_toStartOf="@+id/tv_watchers_label"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_repo_name"
+                tools:text="number of forks" />
+
+            <TextView
+                android:id="@+id/tv_forks_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@id/tv_forks_label"
+                app:layout_constraintStart_toStartOf="@id/tv_forks_label"
+                app:layout_constraintTop_toBottomOf="@id/tv_forks_label"
+                tools:text="11" />
+
+            <TextView
+                android:id="@+id/tv_watchers_label"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="watchers"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_forks_label"
+                app:layout_constraintEnd_toStartOf="@+id/tv_forks_label"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_forks_label"
+                tools:text="watchers" />
+
+            <TextView
+                android:id="@+id/tv_watchers_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@id/tv_watchers_label"
+                app:layout_constraintStart_toStartOf="@id/tv_watchers_label"
+                app:layout_constraintTop_toBottomOf="@id/tv_watchers_label"
+                tools:text="14" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tag_list"
+                style="@style/reposListViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/common_activity_margin"
+                android:layout_marginBottom="@dimen/common_activity_margin"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tv_watchers_num"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:itemCount="3"
+                tools:listitem="@layout/repository_tag_list_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

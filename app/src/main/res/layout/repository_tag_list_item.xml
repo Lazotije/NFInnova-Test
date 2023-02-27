@@ -11,52 +11,32 @@
     app:cardElevation="@dimen/card_elevation"
     app:cardUseCompatPadding="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="@dimen/common_activity_padding">
 
         <TextView
-            android:id="@+id/label"
+            android:id="@+id/tv_tag_name"
             style="@style/reposTextView.Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/open_issues"
-            app:layout_constraintHorizontal_bias="0.087"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.534"
-            android:ellipsize="end"
-            tools:text="Repo name" />
+            tools:text="Tag name" />
 
         <TextView
-            android:id="@+id/open_issues"
-            style="@style/reposTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@string/open_issues"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/label"
-            tools:text="Open issues" />
-
-        <TextView
-            android:id="@+id/num_open_issues"
+            android:id="@+id/tv_sha"
             style="@style/reposTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/inner_text_margin"
             android:ellipsize="end"
             android:maxLines="1"
-            app:layout_constraintStart_toStartOf="@id/open_issues"
-            app:layout_constraintEnd_toEndOf="@id/open_issues"
-            app:layout_constraintTop_toBottomOf="@id/open_issues"
-            tools:text="11" />
+            app:layout_constraintStart_toStartOf="@id/label"
+            app:layout_constraintTop_toBottomOf="@id/label"
+            tools:text="Commit Sha" />
 
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

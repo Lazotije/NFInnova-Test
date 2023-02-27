@@ -1,9 +1,12 @@
 package com.example.repoapp.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.repoapp.BaseFragment
 import com.example.repoapp.R
 import com.example.repoapp.adapter.ReposAdapter
@@ -14,7 +17,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RepositoryFragment : BaseFragment(
     showToolbar = false,
-    showBack = true
+    showBack = false,
+    "Repositories"
 ) {
     private var loadingDialog : ReposLoadingDialog? = null
     private var adapter : ReposAdapter? = null
@@ -36,9 +40,18 @@ class RepositoryFragment : BaseFragment(
             )
         )
 
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setupView()
         setupObservers()
-        return binding.root
+        fetchRepos()
+    }
+
+    private fun fetchRepos() {
+        viewModel.getRepos()
     }
 
     private fun setupView(){
@@ -47,11 +60,17 @@ class RepositoryFragment : BaseFragment(
     }
 
     private fun setupObservers() {
+        viewModel.repos.observe(viewLifecycleOwner) {
+            adapter?.submitList(it)
+        }
 
+        viewModel.repoSelected.observe(viewLifecycleOwner) { repo ->
+            parentFragment?.findNavController()?.navigate(RepositoryFragmentDirections.actionRepoDetails(repo))
+        }
     }
 
     private fun onListItemClick(position: Int) {
-
+        viewModel.repoClicked(position)
     }
 
     private fun showLoading() {

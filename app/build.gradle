@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -78,4 +80,7 @@ dependencies {
     // Fragment
     implementation "androidx.appcompat:appcompat:${versions.app_compat}"
     implementation "androidx.fragment:fragment:${versions.fragment}"
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:${versions.picasso}"
 }

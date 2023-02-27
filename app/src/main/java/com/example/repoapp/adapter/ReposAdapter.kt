@@ -44,7 +44,6 @@ internal class ReposAdapter(private val onItemClicked: (position: Int) -> Unit) 
             val position = adapterPosition
             onItemClicked(position)
         }
-
     }
 
     internal object ReposDiffCallback : DiffUtil.ItemCallback<UserRepo>() {
