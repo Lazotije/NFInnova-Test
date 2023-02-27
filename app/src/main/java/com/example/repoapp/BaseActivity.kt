@@ -64,7 +64,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseFragment.BaseFragmentInte
     override fun setShowBack(show: Boolean) {
         if (show) {
             toolbar.navigationIcon =
-                getColoredIcon(com.google.android.material.R.drawable.ic_arrow_back_black_24, R.color.toolbar_primary_icon_color)
+                getColoredIcon(R.drawable.ic_left_arrow, R.color.toolbar_primary_icon_color)
             supportActionBar?.setDisplayShowHomeEnabled(true)
         }
     }

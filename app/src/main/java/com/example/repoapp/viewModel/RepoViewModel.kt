@@ -1,6 +1,8 @@
 package com.example.repoapp.viewModel
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.repoapp.repository.RepoRepository
@@ -10,7 +12,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 class RepoViewModel : KoinComponent, ViewModel() {
-    val repository by inject<RepoRepository>()
+    private val repository by inject<RepoRepository>()
 
     fun getRepos(){
         viewModelScope.launch(Dispatchers.IO) {

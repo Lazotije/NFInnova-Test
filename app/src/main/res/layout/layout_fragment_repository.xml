@@ -16,6 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:itemCount="3"
-        tools:listitem="@layout/layout_repository_item" />
+        tools:listitem="@layout/repository_list_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

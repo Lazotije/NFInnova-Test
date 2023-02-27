@@ -1,8 +1,8 @@
 package com.example.repoapp.repository
 
-import com.example.repoapp.getRetrofitService
 import com.example.repoapp.model.UserRepo
 import com.example.repoapp.network.RepoApi
+import com.example.repoapp.utils.getRetrofitService
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import retrofit2.Response

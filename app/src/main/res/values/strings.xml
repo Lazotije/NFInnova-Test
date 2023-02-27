@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">RepoApp</string>
+    <string name="app_name">Repositories</string>
+    <string name="ok">OK</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
     <string name="repo_name">Repo name</string>
     <string name="open_issues">Open issues</string>
+
+    <!-- Errors -->
+    <string name="error_communication_title">Communication Error</string>
+    <string name="error_generic">Error</string>
+    <string name="error_unexpected">An unexpected error occurred, please try again later.</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_unexpected_message">An unexpected error occurred</string>
 </resources>

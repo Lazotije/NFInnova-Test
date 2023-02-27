@@ -1,7 +1,7 @@
-package com.example.repoapp
+package com.example.repoapp.utils
 
-import com.example.repoapp.HttpClientManager.defaultHttpClient
 import com.example.repoapp.network.BASE_URL
+import com.example.repoapp.utils.HttpClientManager.defaultHttpClient
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
