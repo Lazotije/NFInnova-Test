@@ -28,4 +28,10 @@
     <dimen name="button_corner_radius">6dp</dimen>
     <dimen name="button_border_width">1dp</dimen>
 
+    <!--  Repo details  -->
+    <dimen name="avatar_width">80dp</dimen>
+    <dimen name="avatar_height">80dp</dimen>
+    <dimen name="repo_details_label_layout_witdh">129dp</dimen>
+    <dimen name="repo_details_label_layout_witdh2">130dp</dimen>
+    <dimen name="small_margin">5dp</dimen>
 </resources>

@@ -8,7 +8,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="@dimen/common_activity_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,9 +20,9 @@
 
             <ImageView
                 android:id="@+id/iv_avatar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="avatar"
+                android:layout_width="@dimen/avatar_width"
+                android:layout_height="@dimen/avatar_height"
+                android:contentDescription="@string/avatar"
                 android:src="@drawable/ic_launcher_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -32,20 +32,19 @@
                 android:id="@+id/tv_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="?android:textColorPrimary"
-                android:textSize="16sp"
+                style="@style/reposTextView.Title"
+                android:layout_marginTop="@dimen/common_activity_margin"
                 app:layout_constraintEnd_toEndOf="@id/iv_avatar"
                 app:layout_constraintStart_toStartOf="@id/iv_avatar"
                 app:layout_constraintTop_toBottomOf="@id/iv_avatar"
                 tools:text="name" />
 
-
             <TextView
                 android:id="@+id/tv_repo_name"
-                android:layout_width="129dp"
+                android:layout_width="@dimen/repo_details_label_layout_witdh"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/small_margin"
+                style="@style/reposTextView.Label"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toStartOf="@+id/tv_forks_label"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -56,9 +55,10 @@
 
             <TextView
                 android:id="@+id/tv_forks_label"
-                android:layout_width="129dp"
+                android:layout_width="@dimen/repo_details_label_layout_witdh"
                 android:layout_height="wrap_content"
-                android:text="number of forks"
+                android:text="@string/num_of_forks"
+                style="@style/reposTextView.Label"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_repo_name"
                 app:layout_constraintEnd_toStartOf="@+id/tv_watchers_label"
@@ -71,6 +71,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                style="@style/reposTextView"
                 app:layout_constraintEnd_toEndOf="@id/tv_forks_label"
                 app:layout_constraintStart_toStartOf="@id/tv_forks_label"
                 app:layout_constraintTop_toBottomOf="@id/tv_forks_label"
@@ -78,9 +79,10 @@
 
             <TextView
                 android:id="@+id/tv_watchers_label"
-                android:layout_width="130dp"
+                android:layout_width="@dimen/repo_details_label_layout_witdh2"
                 android:layout_height="wrap_content"
-                android:text="watchers"
+                style="@style/reposTextView.Label"
+                android:text="@string/watchers"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_forks_label"
                 app:layout_constraintEnd_toStartOf="@+id/tv_forks_label"
@@ -93,6 +95,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
+                style="@style/reposTextView"
                 app:layout_constraintEnd_toEndOf="@id/tv_watchers_label"
                 app:layout_constraintStart_toStartOf="@id/tv_watchers_label"
                 app:layout_constraintTop_toBottomOf="@id/tv_watchers_label"
@@ -114,7 +117,6 @@
                 tools:listitem="@layout/repository_tag_list_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </androidx.core.widget.NestedScrollView>
 

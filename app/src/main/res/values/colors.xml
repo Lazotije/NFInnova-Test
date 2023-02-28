@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2BDFF3</color>
+    <color name="colorPrimary">#FFFFFFFF</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#027AFF</color>
 
@@ -37,12 +37,12 @@
     <color name="outlined_button_disable_text_color">@color/black_25</color>
 
     <!-- Status bar -->
-    <color name="status_bar_color">@color/black</color>
+    <color name="status_bar_color">@color/dark_blue</color>
 
     <!-- Toolbar -->
-    <color name="toolbar_primary_text_color">@color/text_color</color>
-    <color name="toolbar_primary_background_color">@color/white</color>
-    <color name="toolbar_primary_icon_color">@color/black</color>
+    <color name="toolbar_primary_text_color">@color/white</color>
+    <color name="toolbar_primary_background_color">@color/dark_blue</color>
+    <color name="toolbar_primary_icon_color">@color/white</color>
 
     <!-- Spinner -->
     <color name="loading_spinner_color">@color/black_60</color>
