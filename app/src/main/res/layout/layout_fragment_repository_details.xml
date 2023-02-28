@@ -30,9 +30,9 @@
 
             <TextView
                 android:id="@+id/tv_username"
+                style="@style/reposTextView.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/reposTextView.Title"
                 android:layout_marginTop="@dimen/common_activity_margin"
                 app:layout_constraintEnd_toEndOf="@id/iv_avatar"
                 app:layout_constraintStart_toStartOf="@id/iv_avatar"
@@ -41,24 +41,24 @@
 
             <TextView
                 android:id="@+id/tv_repo_name"
-                android:layout_width="@dimen/repo_details_label_layout_witdh"
+                style="@style/reposTextView.Label"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_margin"
-                style="@style/reposTextView.Label"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toStartOf="@+id/tv_forks_label"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_username"
                 tools:text="@string/repo_name" />
 
             <TextView
                 android:id="@+id/tv_forks_label"
-                android:layout_width="@dimen/repo_details_label_layout_witdh"
+                style="@style/reposTextView.Label"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/num_of_forks"
-                style="@style/reposTextView.Label"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_repo_name"
                 app:layout_constraintEnd_toStartOf="@+id/tv_watchers_label"
@@ -68,10 +68,10 @@
 
             <TextView
                 android:id="@+id/tv_forks_num"
+                style="@style/reposTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                style="@style/reposTextView"
                 app:layout_constraintEnd_toEndOf="@id/tv_forks_label"
                 app:layout_constraintStart_toStartOf="@id/tv_forks_label"
                 app:layout_constraintTop_toBottomOf="@id/tv_forks_label"
@@ -79,23 +79,23 @@
 
             <TextView
                 android:id="@+id/tv_watchers_label"
-                android:layout_width="@dimen/repo_details_label_layout_witdh2"
-                android:layout_height="wrap_content"
                 style="@style/reposTextView.Label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:text="@string/watchers"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_forks_label"
-                app:layout_constraintEnd_toStartOf="@+id/tv_forks_label"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/tv_forks_label"
                 tools:text="watchers" />
 
             <TextView
                 android:id="@+id/tv_watchers_num"
+                style="@style/reposTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                style="@style/reposTextView"
                 app:layout_constraintEnd_toEndOf="@id/tv_watchers_label"
                 app:layout_constraintStart_toStartOf="@id/tv_watchers_label"
                 app:layout_constraintTop_toBottomOf="@id/tv_watchers_label"
@@ -109,10 +109,10 @@
                 android:layout_marginTop="@dimen/common_activity_margin"
                 android:layout_marginBottom="@dimen/common_activity_margin"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/tv_watchers_num"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_watchers_num"
                 tools:itemCount="3"
                 tools:listitem="@layout/repository_tag_list_item" />
 

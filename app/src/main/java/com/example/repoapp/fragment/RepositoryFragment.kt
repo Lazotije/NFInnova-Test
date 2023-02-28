@@ -21,8 +21,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RepositoryFragment : BaseFragment(
     showToolbar = false,
-    showBack = false,
-    "Repositories"
+    showBack = true
 ) {
     private var loadingDialog : ReposLoadingDialog? = null
     private var adapter : ReposAdapter? = null

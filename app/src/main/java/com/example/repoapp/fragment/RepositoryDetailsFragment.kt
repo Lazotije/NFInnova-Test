@@ -19,7 +19,9 @@ import com.example.repoapp.vo.Status
 import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class RepositoryDetailsFragment : Fragment() {
+class RepositoryDetailsFragment : BaseFragment(
+    title = Strings.get(R.string.repo_details)
+) {
     private val args: RepositoryDetailsFragmentArgs by navArgs()
     private var _binding: LayoutFragmentRepositoryDetailsBinding? = null
     private val binding get() = _binding!!

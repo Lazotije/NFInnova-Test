@@ -6,9 +6,10 @@
     <string name="repo_name">Repo name</string>
     <string name="open_issues">Open issues</string>
     <string name="avatar">Avatar</string>
-    <string name="num_of_forks">Number of forks</string>
+    <string name="num_of_forks">Forks</string>
     <string name="watchers">Watchers</string>
     <string name="repo_details">Repo details</string>
+    <string name="repositories">Repositories</string>
 
     <!-- Errors -->
     <string name="error_communication_title">Communication Error</string>

@@ -8,7 +8,7 @@ abstract class BaseFragment(
     var showToolbar: Boolean = true,
     var showBack: Boolean = false,
     var title: String? = null
-) : Fragment(), DefaultLifecycleObserver {
+) : Fragment(), LifecycleObserver {
     interface BaseFragmentInterface {
         fun setToolbarVisible(visible: Boolean)
         fun setToolbarTitle(text: String?)
@@ -25,16 +25,6 @@ abstract class BaseFragment(
         super.onDetach()
         lifecycle.removeObserver(this)
     }
-
-//    override fun onResume(owner: LifecycleOwner) {
-//        if (activity is BaseFragmentInterface) {
-//            with(activity as BaseFragmentInterface) {
-//                setToolbarVisible(showToolbar)
-//                setToolbarTitle(title)
-//                setShowBack(showBack)
-//            }
-//        }
-//    }
 
     //todo check
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)

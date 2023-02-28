@@ -5,7 +5,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(){
 
     private lateinit var navController: NavController
 
@@ -35,5 +35,9 @@ class MainActivity : BaseActivity() {
                 toolbar.navigationIcon = null
             }
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

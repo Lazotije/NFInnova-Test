@@ -11,6 +11,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.DrawableCompat
+import com.example.repoapp.utils.Colors
 
 abstract class BaseActivity : AppCompatActivity(), BaseFragment.BaseFragmentInterface {
 
@@ -21,7 +22,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseFragment.BaseFragmentInte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.statusBarColor = getColor(R.color.status_bar_color)
+        window.statusBarColor = Colors.get(R.color.status_bar_color)
         setContentView(layoutId)
         setupToolbar()
     }
