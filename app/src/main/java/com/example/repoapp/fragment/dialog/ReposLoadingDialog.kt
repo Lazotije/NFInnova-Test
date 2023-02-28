@@ -29,4 +29,9 @@ class ReposLoadingDialog : DialogFragment() {
     override fun getTheme(): Int {
         return R.style.AppTheme_Dialog_TranslucentStatusBar_NoColor
     }
+
+    companion object {
+        const val tag = "Repos"
+        const val errorTag = "ReposErrorDialog"
+    }
 }

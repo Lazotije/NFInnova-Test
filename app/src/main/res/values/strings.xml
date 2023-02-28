@@ -8,6 +8,7 @@
     <string name="avatar">Avatar</string>
     <string name="num_of_forks">Number of forks</string>
     <string name="watchers">Watchers</string>
+    <string name="repo_details">Repo details</string>
 
     <!-- Errors -->
     <string name="error_communication_title">Communication Error</string>

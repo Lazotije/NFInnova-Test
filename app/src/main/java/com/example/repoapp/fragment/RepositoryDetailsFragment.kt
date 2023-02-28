@@ -6,10 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.example.repoapp.BaseFragment
 import com.example.repoapp.R
 import com.example.repoapp.adapter.TagsAdapter
 import com.example.repoapp.databinding.LayoutFragmentRepositoryDetailsBinding
+import com.example.repoapp.fragment.dialog.ReposAlertDialog
+import com.example.repoapp.fragment.dialog.ReposDialogButton
+import com.example.repoapp.fragment.dialog.ReposLoadingDialog
+import com.example.repoapp.utils.Strings
 import com.example.repoapp.viewModel.RepoDetailsViewModel
+import com.example.repoapp.vo.Status
 import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -19,6 +25,7 @@ class RepositoryDetailsFragment : Fragment() {
     private val binding get() = _binding!!
     private val viewModel by viewModel<RepoDetailsViewModel>()
     private var adapter : TagsAdapter? = null
+    private var loadingDialog : ReposLoadingDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,12 +65,28 @@ class RepositoryDetailsFragment : Fragment() {
                 tvWatchersNum.text = it.watchersCount.toString()
                 tvRepoName.text = args.repo.name
             }
+
             Picasso.get().load(args.repo.owner.avatar_url).
             into(binding.ivAvatar)
         }
 
         viewModel.tags.observe(viewLifecycleOwner) {
             adapter?.submitList(it)
+        }
+
+        viewModel.repoDetailsResponse.observe(viewLifecycleOwner) { state ->
+            when (state.status) {
+                Status.RUNNING -> showLoading()
+                Status.SUCCESS -> {
+                    loadingDialog?.dismiss()
+                }
+                Status.FAILED -> {
+                    showError(state.error, Strings.get(R.string.error_unexpected))
+                }
+                Status.EMPTY -> {
+                    //do nothing
+                }
+            }
         }
     }
 
@@ -73,5 +96,18 @@ class RepositoryDetailsFragment : Fragment() {
 
     private fun fetchTags() {
         viewModel.getTags(args.repo.name)
+    }
+
+    private fun showLoading() {
+        if (loadingDialog == null) loadingDialog = ReposLoadingDialog()
+        loadingDialog?.show(parentFragmentManager, ReposLoadingDialog.tag)
+    }
+
+    private fun showError(title: String? = null, message: String?) {
+        loadingDialog?.dismiss()
+        ReposAlertDialog(title, message, positiveButton = ReposDialogButton(getString(R.string.ok)) {
+            viewModel.resetState()
+        }
+        ).show(parentFragmentManager,ReposLoadingDialog.errorTag )
     }
 }
